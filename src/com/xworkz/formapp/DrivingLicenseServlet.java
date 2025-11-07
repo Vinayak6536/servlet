@@ -126,6 +126,8 @@ public class DrivingLicenseServlet extends GenericServlet{
        PrintWriter writer13= servletResponse.getWriter();
        writer13.println("data sent successfully...."+state);
 
+        System.out.println("Uploading to git");
+
 
     }
 }
