@@ -43,9 +43,14 @@ public class MovieTicketBookingServlet extends HttpServlet {
         writer.println("Movie Seat Type:"+seat);
         writer.println("Theatre:"+theatre);
         writer.println("Movie Feedback:"+feedback);
+        writer.println("<h3>");
+        writer.println("<a href='MovieTicketBooking.html'>Click here another Movie Ticket</a>");
+        writer.println("</h3>");
         writer.println("</pre>");
         writer.println("</body>");
         writer.println("</html>");
+
+
 
     }
 }
