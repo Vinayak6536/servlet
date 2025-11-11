@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ticket Booking</title>
+</head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+<body>
+<h1></h1>
+
+<form action="movie" method="post" >
+    <table >
+        <tr>
+            <th colspan="2" style="text-align:center; color:red;" >Movie Ticket Booking</th>
+        </tr>
+
+        <tr>
+            <td>Movie Name</td>
+            <td><input type="text" name="name" /></td>
+        </tr>
+
+        <tr>
+            <td>Price</td>
+            <td><input type="number" name="price" /></td>
+        </tr>
+
+        <tr>
+            <td>Seat Type</td>
+            <td>
+                <input type="radio" name="seat" value="Silver" /> Silver
+                <input type="radio" name="seat" value="Gold" /> Gold
+            </td>
+        </tr>
+
+        <tr>
+            <td>Theatre</td>
+            <td>
+                <select name="theatre">
+                    <option>Select Theatre</option>
+                    <option value="Veeresh">Veeresh</option>
+                    <option value="Prasanna">Prasanna</option>
+                    <option value="Venkatesh">Venkatesh</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Feedback</td>
+            <td><textarea name="feedback" placeholder="Enter your feedback"></textarea></td>
+        </tr>
+
+        <tr>
+            <td colspan="2" style="text-align:center;">
+                <input type="submit" value="Send" />
+            </td>
+        </tr>
+    </table>
+</form>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+</html>
