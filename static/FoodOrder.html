@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Food Order Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+          crossorigin="anonymous">
+</head>
+<body class="bg-danger-subtle d-flex justify-content-center align-items-center vh-100">
+
+<div class="card shadow-lg border-0" style="width: 420px;">
+    <div class="card-header bg-danger text-white text-center">
+        <h4 class="mb-0"> Food Order Booking</h4>
+    </div>
+    <div class="card-body bg-white">
+        <form action="food" method="post" class="needs-validation" novalidate>
+            <div class="mb-3">
+                <label for="name" class="form-label">Customer Name</label>
+                <input type="text" id="name" name="name" class="form-control" placeholder="vinayak" required>
+            </div>
+            <div class="mb-3">
+                <label for="number" class="form-label">Contact Number</label>
+                <input type="tel" id="number" name="number" class="form-control" placeholder="1234567890" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Order Type</label>
+                <div class="btn-group d-flex" role="group">
+                    <input type="radio" class="btn-check" name="order" id="dinein" value="dinein" autocomplete="off">
+                    <label class="btn btn-outline-danger" for="dinein">Dine In</label>
+
+                    <input type="radio" class="btn-check" name="order" id="delivery" value="delivery" autocomplete="off">
+                    <label class="btn btn-outline-danger" for="delivery">Delivery</label>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="items" class="form-label">Select Menu Item</label>
+                <select name="items" id="items" class="form-select" required>
+                    <option value="" selected disabled>Choose your meal</option>
+                    <option value="pizza">Pizza</option>
+                    <option value="burger">Burger</option>
+                    <option value="salad">Salad</option>
+                    <option value="biriyani">Biriyani</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="instructions" class="form-label">Delivery Instructions</label>
+                <textarea id="instructions" name="delivery" class="form-control" rows="3" placeholder="Add any special notes"></textarea>
+            </div>
+            <button type="submit" class="btn btn-danger w-100">Place Order</button>
+        </form>
+    </div>
+    <div class="card-footer text-center text-muted small">
+        Thank you for choosing us!
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+</html>
