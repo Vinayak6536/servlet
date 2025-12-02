@@ -372,6 +372,17 @@ public class Street {
             }
             System.out.println("--------------------------------");
 
+            //Update command using preparedStatement
+            String newUpdate="update street set street_name=? where street_id=?";
+            PreparedStatement preparedStatement=connection.prepareStatement(newUpdate);
+            preparedStatement.setString(1,"Vijayanagara");
+            preparedStatement.setInt(2,74);
+
+            preparedStatement.setString(1,"MCLayout");
+            preparedStatement.setInt(2,75);
+            int rowAffected=preparedStatement.executeUpdate();
+            System.out.println(rowAffected+" "+"Rows Affected");
+
         } catch (SQLException e) {
             e.printStackTrace();
         }

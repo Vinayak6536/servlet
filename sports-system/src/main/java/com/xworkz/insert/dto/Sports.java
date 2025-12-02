@@ -13,7 +13,7 @@ public class Sports {
 
             System.out.println("Connected" + connection);
 
-           /* String sql = "insert into sports values(2,'Badminton','Individual','Indoor','Racket',2,'Court','India',1934,'Points')," +
+            String sql = "insert into sports values(2,'Badminton','Individual','Indoor','Racket',2,'Court','India',1934,'Points')," +
                     "(3,'Hockey','Team','Outdoor','Stick & Ball',11,'Ground','England',1876,'Goals')," +
                     "(4,'Football','Team','Outdoor','Ball',11,'Stadium','England',1863,'Goals')," +
                     "(5,'Tennis','Individual','Outdoor','Racket',2,'Court','France',1874,'Points')," +
@@ -89,11 +89,11 @@ public class Sports {
                     "(75,'Esports','Team','Indoor','Controller/PC',5,'Arena','South Korea',2000,'Points')";
 
             Statement statement = connection.createStatement();
-            int rowAffected = statement.executeUpdate(sql);
-            System.out.println(rowAffected + " " + "RowsAffected");   */
+//            int rowAffected = statement.executeUpdate(sql);
+//            System.out.println(rowAffected + " " + "RowsAffected");
 
             //delete a row by pk
-            Statement statement = connection.createStatement();
+           // Statement statement = connection.createStatement();
             String delete = "DELETE FROM sports WHERE s_id = 5";
             int d1 = statement.executeUpdate(delete);
             System.out.println(d1+"rowsAffected");
@@ -104,13 +104,11 @@ public class Sports {
             System.out.println(d3+"rowsAffected");
 
             //Update least 4 columns using 4 different query jdbc on
-            String update="update sports set s_name='Biker' where s_id=73 ";
+            String update="update sports set s_name='Biker' where s_id=71 ";
             int update1=statement.executeUpdate(update);
             System.out.println(update1 +" "+"RowsAffected");
 
-            String update2="update sports set s_id=34 where s_name='cricket' ";
-            int update3=statement.executeUpdate(update2);
-            System.out.println(update3 +" "+"RowsAffected");
+
 
             String update4="update sports set s_place='india' where s_scoring='points' ";
             int update5=statement.executeUpdate(update4);
@@ -346,6 +344,20 @@ public class Sports {
                 System.out.println("sports Type:" + resultSet14.getString("s_type") + " " + "Total Available=" + resultSet14.getString("total_sports"));
             }
             System.out.println("--------------------------------");
+
+            //Update command using preparedStatement
+            String newUpdate="update sports set s_name=? where s_id=?";
+            PreparedStatement preparedStatement=connection.prepareStatement(newUpdate);
+            preparedStatement.setString(1,"Cricket");
+            preparedStatement.setInt(2,70);
+preparedStatement.addBatch();
+            preparedStatement.setString(1,"Runninig");
+            preparedStatement.setInt(2,73);
+            preparedStatement.addBatch();
+            int[] rowAffected=preparedStatement.executeBatch();
+
+            System.out.println(rowAffected.length+" "+"Rows Affected");
+
         } catch (Exception s) {
             s.printStackTrace();
         }
