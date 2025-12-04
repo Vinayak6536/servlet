@@ -3,11 +3,12 @@
 <body>
 <h1>Course Register </h1>
 <pre>
-Name:${name};
-Date Of Birth:${dob};
-Address:${address};
-Gender:${gender};
-Course:${course};
+Name:${name}
+Date Of Birth:${dob}
+Phone No:${phone}
+Address:${address}
+Gender:${gender}
+Course:${course}
 <pre>
 
 </body>

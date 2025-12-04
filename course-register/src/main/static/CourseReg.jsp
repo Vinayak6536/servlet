@@ -6,6 +6,7 @@
 <pre>
 Name:<input type="text" name="name"/>
 Date Of Birth:<input type="date" name="dob"/>
+Phone No:<input type="number" name="phone"/>
 Address:<input type="text" name="address"/>
 Gender:<input type="radio" name="gender" value="Male"/>Male <input type="radio" name="gender" value="female"/>Female
 Course:<select name="course">
