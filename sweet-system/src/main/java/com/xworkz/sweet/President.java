@@ -398,9 +398,9 @@ public class President {
             String select14 = "select party,count(*) as total_parties from president group by party having count(*) >2";
             ResultSet resultSet14 = statement.executeQuery(select14);
             while (resultSet14.next()) {
-                System.out.println("Party Type:" + resultSet14.getString("party") + " " + "Total parties=" + resultSet14.getString("total_parties"));
+                System.err.println("Party Type:" + resultSet14.getString("party") + " " + "Total parties=" + resultSet14.getString("total_parties"));
             }
-            System.out.println("--------------------------------");
+            System.err.println("--------------------------------");
             
             
             
