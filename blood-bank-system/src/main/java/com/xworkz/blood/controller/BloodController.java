@@ -20,6 +20,10 @@ public class BloodController {
     @Autowired
     private BloodService bloodService;
 
+    public BloodController(){
+        System.out.println("Running BloodController...");
+    }
+
     @PostMapping("/createAccount")
     public String addRegister(BloodDto bloodDto) {
         boolean saved = bloodService.updateAndSave(bloodDto);
