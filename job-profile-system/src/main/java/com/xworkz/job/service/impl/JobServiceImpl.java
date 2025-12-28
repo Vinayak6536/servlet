@@ -7,6 +7,8 @@ import com.xworkz.job.service.JobService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class JobServiceImpl implements JobService {
     @Autowired
@@ -16,9 +18,19 @@ public class JobServiceImpl implements JobService {
     public boolean validateAndSave(PersonalDto personalDto) {
 
         if (personalDto != null) {
+            System.out.println("Name Service Method");
             return jobDao.personalDataSave(personalDto);
         }
         return false;
+    }
+
+    @Override
+    public Optional<PersonalDto> validateAndFetch(String name) {
+        if (name != null){
+            return jobDao.getIdByName(name);
+        }else{
+            return Optional.empty();
+        }
     }
 
     @Override

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 @NoArgsConstructor
 @ToString
 public class PersonalDto {
+    private int id;
     private String firstName;
     private String lastName;
     private String dob;
@@ -16,4 +17,12 @@ public class PersonalDto {
     private String email;
     private long phone;
 
+    public PersonalDto(int id, String name) {
+         this.id=id;
+         this.firstName=name;
+    }
+
+    public PersonalDto(int id) {
+        this.id=id;
+    }
 }
