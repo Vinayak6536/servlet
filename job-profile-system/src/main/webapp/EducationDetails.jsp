@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
+<%@ page isELIgnored="false" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -127,8 +128,11 @@
                 </div>
 
                 <div class="card-body">
-                    <form name="eduForm" action="education" method="post" onsubmit="return validateForm()">
+                    <form name="eduForm" action="<%= request.getContextPath() %>/education" method="post" onsubmit="return validateForm()">
 
+                            <div class="col-md-8">
+                                <input type="number" name="id" class="form-control" value="${dto.getId()}" maxlength="100" required>
+                            </div>
                         <!-- School -->
                         <h6>School</h6>
                         <div class="row mb-3">
@@ -189,7 +193,7 @@
                         </div>
 
                         <div class="text-center">
-                            <button type="submit" class="btn btn-success">Next</button>
+                            <a href="idDirect?id=${dto.id}" class="btn btn-success">Next</a>
                         </div>
 
                     </form>

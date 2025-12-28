@@ -7,7 +7,10 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
+
 public class EducationDto {
+
+    private int id;
     private String schoolName;
     private double schoolPerc;
     private String collegeName;
